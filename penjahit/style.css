@@ -1,0 +1,69 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; background: #fbf3e4; color: #3b2a2a; min-height: 100vh; display: flex; flex-direction: column; }
+
+/* Header dengan meteran kuning */
+header { text-align: center; padding: 0 20px 18px; }
+header::before { content: ""; display: block; height: 34px; margin: 0 -20px 22px; background: linear-gradient(to right, #7a5a00 1.5px, transparent 1.5px) 0 0 / 50px 20px repeat-x, linear-gradient(to right, #7a5a00 1px, transparent 1px) 0 0 / 10px 10px repeat-x, #f2c94c; }
+header h1 { margin: 0; font-family: Georgia, serif; font-size: 44px; color: #5a0f2c; }
+header p { margin: 6px 0 0; font-size: 14px; color: #8a6d4b; }
+
+/* Menu */
+nav { text-align: center; padding: 12px 0; border-top: 1px solid #d9c7a3; border-bottom: 1px solid #d9c7a3; }
+nav a { color: #5a0f2c; text-decoration: none; margin: 0 16px; font-size: 15px; font-weight: bold; padding-bottom: 4px; }
+nav a:hover, nav a.aktif { border-bottom: 2px solid #c9a227; }
+
+main { flex: 1; width: 100%; max-width: 1200px; margin: 0 auto; padding: 30px 25px; }
+h2 { text-align: center; color: #5a0f2c; font-family: Georgia, serif; }
+
+/* Hero beranda */
+.hero { display: flex; align-items: center; gap: 50px; padding: 20px 0; }
+.hero-teks { flex: 1; }
+.hero p { line-height: 1.6; margin: 0 0 22px; }
+.hero .kecil { letter-spacing: 3px; font-size: 12px; color: #8a6d4b; margin: 0 0 10px; }
+.hero h2 { text-align: left; font-size: 42px; margin: 0 0 15px; line-height: 1.15; }
+.kolase { flex: 1; position: relative; height: 440px; max-width: 460px; }
+.kolase .bingkai { position: absolute; width: 230px; background: #fff; border: 2px dashed #5a0f2c; padding: 8px; box-shadow: 0 3px 8px rgba(90,15,44,.25); }
+.kolase img { display: block; width: 100%; height: 260px; object-fit: cover; }
+.kolase span { display: block; text-align: center; font-size: 13px; font-weight: bold; color: #5a0f2c; padding-top: 6px; }
+.b1 { top: 0; left: 0; transform: rotate(-5deg); }
+.b2 { top: 40px; right: 0; transform: rotate(4deg); }
+.b3 { bottom: 0; left: 90px; transform: rotate(-1deg); z-index: 2; }
+/* Tombol */
+.btn { display: inline-block; background: #5a0f2c; color: #ffffff; padding: 10px 22px; border-radius: 25px; text-decoration: none; font-weight: bold; border: none; cursor: pointer; font-size: 14px; margin-right: 8px; }
+.btn:hover { background: #7a1f45; }
+.btn.garis { background: transparent; color: #5a0f2c; border: 1.5px solid #5a0f2c; }
+.btn.garis:hover { background: #5a0f2c; color: #ffffff; }
+
+/* Kartu produk */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-top: 20px; }
+.card { background: #fff; border-radius: 10px; overflow: hidden; text-align: center; box-shadow: 0 2px 6px rgba(90,15,44,.2); padding-bottom: 15px; }
+.foto { position: relative; height: 280px; background: #fff; color: #5a0f2c; font-weight: bold; font-size: 22px; line-height: 300px; margin-bottom: 10px; }
+.foto img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; }
+.card h3 { margin: 8px 0; color: #5a0f2c; font-size: 24px; }
+.card small { display: block; padding: 0 12px; min-height: 32px; font-size: 16px; }
+.harga { color: #800000; font-weight: bold; margin: 10px 0; }
+
+/* Form dan kotak */
+.box { background: #fff; border-radius: 10px; padding: 22px; margin-top: 18px; box-shadow: 0 2px 6px rgba(90,15,44,.2); }
+.box label { display: block; font-weight: bold; color: #5a0f2c; margin-top: 5px; }
+.box input, .box select { width: 100%; padding: 9px; margin: 5px 0 12px; border: 1px solid #5a0f2c; border-radius: 5px; }
+.box textarea { width: 100%; padding: 9px; margin: 5px 0 12px; border: 1px solid #5a0f2c; border-radius: 5px; font-family: Arial; }
+.telp { text-align: center; font-size: 22px; font-weight: bold; color: #5a0f2c; margin: 10px 0; }
+.sub-judul { color: #5a0f2c; margin-top: 0; }
+.langkah { line-height: 1.8; }
+.ukuran { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+
+/* Sub-produk */
+.sub { display: none; margin-top: 30px; }
+.sub:target { display: block; }
+.judul { text-align: left; border-left: 6px solid #f2c94c; padding-left: 10px; }
+
+footer { background: #5a0f2c; color: #f3e6c8; text-align: center; padding: 16px 10px; font-size: 12px; }
+footer p { margin: 4px 0; }
+
+@media (max-width: 700px) {
+    .hero { flex-direction: column; }
+    .kolase { max-width: 100%; width: 100%; }
+    .kolase .bingkai { width: 46%; }
+    .kolase img { height: 150px; }
+}

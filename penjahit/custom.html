@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Custom Desain - Delima Home &amp; Fashion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Penjahit Delima</h1>
+        <p>pakaian wanita, gorden, sprei &amp; perlengkapan rumah pilihan</p>
+    </header>
+    <nav>
+        <a href="index.html">Beranda</a>
+        <a href="produk.html">Produk</a>
+        <a href="custom.html" class="aktif">Custom Desain</a>
+        <a href="pesanan.html">Pesanan</a>
+    </nav>
+    <main>
+        <h2>Custom Desain</h2>
+        <p align="center">Punya model sendiri? Kami jahitkan sesuai keinginan dan ukuran badanmu.</p>
+
+        <div class="box">
+            <h3 class="sub-judul">Cara Pemesanan</h3>
+            <ol class="langkah">
+                <li>Isi form di bawah ini.</li>
+                <li>Klik tombol kirim, WhatsApp akan terbuka otomatis.</li>
+                <li>Kirim foto contoh model (referensi) lewat chat WhatsApp tersebut.</li>
+                <li>Kami konfirmasi harga dan estimasi pengerjaan.</li>
+                <li>Bayar DP, lalu pesanan mulai dijahit.</li>
+            </ol>
+        </div>
+
+        <div class="box">
+            <h3 class="sub-judul">Form Custom Desain</h3>
+
+            <label>Nama</label>
+            <input type="text" id="nama" placeholder="Nama lengkap">
+
+            <label>Jenis Pesanan</label>
+            <select id="jenis">
+                <option>Dress</option>
+                <option>Kebaya</option>
+                <option>Rok</option>
+                <option>Gorden</option>
+                <option>Sprei</option>
+                <option>Sarung Sofa</option>
+                <option>Lainnya</option>
+            </select>
+
+            <label>Bahan</label>
+            <select id="bahan">
+                <option>Katun</option>
+                <option>Satin</option>
+                <option>Brokat</option>
+                <option>Renda</option>
+                <option>Linen</option>
+                <option>Belum tahu, minta saran</option>
+            </select>
+
+            <label>Warna</label>
+            <input type="text" id="warna" placeholder="Contoh: maroon, navy, krem">
+
+            <label>Deskripsi Desain</label>
+            <textarea id="desain" rows="4" placeholder="Ceritakan model yang diinginkan, misalnya lengan, kerah, panjang, hiasan"></textarea>
+
+            <label>Ukuran Badan (cm), khusus pakaian</label>
+            <div class="ukuran">
+                <input type="number" id="dada" placeholder="Lingkar dada">
+                <input type="number" id="pinggang" placeholder="Lingkar pinggang">
+                <input type="number" id="pinggul" placeholder="Lingkar pinggul">
+                <input type="number" id="panjang" placeholder="Panjang baju">
+            </div>
+
+            <label>Tanggal Dibutuhkan</label>
+            <input type="date" id="tanggal">
+
+            <button class="btn" onclick="kirimCustom()">Kirim ke WhatsApp</button>
+        </div>
+
+        <script>
+    function ambil(id) {
+        var nilai = document.getElementById(id).value;
+        return nilai === "" ? "-" : nilai;
+    }
+
+    function tanggalIndo(t) {
+        if (t === "-") return "-";
+        var bulan = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+        var p = t.split("-");
+        return parseInt(p[2]) + " " + bulan[parseInt(p[1]) - 1] + " " + p[0];
+    }
+
+    function kirimCustom() {
+        var pesan = "Halo, saya ingin custom desain:\n" +
+            "Nama: " + ambil("nama") + "\n" +
+            "Jenis: " + ambil("jenis") + "\n" +
+            "Bahan: " + ambil("bahan") + "\n" +
+            "Warna: " + ambil("warna") + "\n" +
+            "Desain: " + ambil("desain") + "\n" +
+            "Lingkar dada: " + ambil("dada") + " cm\n" +
+            "Lingkar pinggang: " + ambil("pinggang") + " cm\n" +
+            "Lingkar pinggul: " + ambil("pinggul") + " cm\n" +
+            "Panjang: " + ambil("panjang") + " cm\n" +
+            "Dibutuhkan tanggal: " + tanggalIndo(ambil("tanggal"));
+        window.open("https://wa.me/6282368750565?text=" + encodeURIComponent(pesan), "_blank");
+    }
+</script>
+    </main>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pesanan - Penjahit Delima</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Penjahit Delima</h1>
+        <p>pakaian wanita, gorden, sprei & perlengkapan rumah pilihan</p>
+    </header>
+    <nav>
+        <a href="index.html">Beranda</a>
+        <a href="produk.html">Produk</a>
+        <a href="custom.html">Custom Desain</a>
+        <a href="pesanan.html" class="aktif">Pesanan</a>
+       
+    </nav>
+    <main>
+        <h2>Pesanan & Kontak</h2>
+        <div class="box">
+            <p align="center">Hubungi kami langsung lewat WhatsApp:</p>
+            <p class="telp">0823-6875-0565</p>
+            <p align="center"><a class="btn" href="https://wa.me/6282368750565" target="_blank">Chat via WhatsApp</a></p>
+        </div>
+        <div class="box">
+            <h3 style="color:#800000;margin-top:0">Form Pesanan</h3>
+            <label>Nama</label>
+            <input type="text" id="nama" placeholder="Nama lengkap">
+            <label>Produk</label>
+            <select id="produk">
+                <option>pakaian wanita</option>
+                <option>Gorden</option>
+                <option>Sprei</option>
+                <option>bantal</option>
+                <option>Sarung Bantal</option>
+            </select>
+            <label>Jumlah</label>
+            <input type="number" id="jumlah" value="1" min="1">
+            <button class="btn" onclick="kirimWA()">Kirim Pesanan ke WhatsApp</button>
+        </div>
+        <script>
+            function kirimWA() {
+                var pesan = "Halo, saya ingin memesan:%0ANama: " + document.getElementById("nama").value +
+                    "%0AProduk: " + document.getElementById("produk").value +
+                    "%0AJumlah: " + document.getElementById("jumlah").value;
+                window.open("https://wa.me/6282368750565?text=" + pesan, "_blank");
+            }
+        </script>
+    </main>
+</body>
+</html>
